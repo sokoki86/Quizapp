@@ -9,14 +9,14 @@
 .startquiz{
   margin: 50px;
   padding: 50px;
-  background-color: aqua;
+  background-color:yellow;
   border-radius: 30px;
 }
 
 .questions{
   margin: 50px;
   padding: 50px;
-  background-color: aqua;
+  background-color:chartreuse;
   border-radius: 30px;
 }
 .endSlide{
@@ -25,3 +25,17 @@
   background-color: aqua;
   border-radius: 30px;
 }
+
+body{
+  justify-content: center;
+  text-align: center;
+  font-size: 25px;
+  font-family: comic sans ms;
+}
+
+div.img{
+  content: url(images/movie-clapper.png);
+  position: flex;
+  
+}
+
