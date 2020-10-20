@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Quiz App</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"
+    type="text/css" />
+  <link href="app.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <h1>Movie and Trivia Quiz</h1>
+  </header>
+  <main>
+<div class="startquiz">
+  <img src="images/movie-clapper.png" alt="Movie-clapper">
+  <h2>Movie & Trivia Quiz</h2>
+  <p>They all float down here!!!!</p>
+  <button>Let's Play</button>
+</div>
+<div class="questions">
+  <h2>Question 1</h2>
+  <p>What is the correct title/name for the main character in the show "Doctor Who"?</p>
+  <form>
+    <input type="radio" value="answer">
+    <label for="answer">The Doctor</label><br>
+    <input type="radio" value="wronganswer">
+    <label for="wronganswer">Decepticons</label><br>
+    <input type="radio" value="wronganswer">
+    <label for="wronganswer">Autobots</label><br>
+    <input type="radio" value="wronganswer">
+    <label for="wronganswer">September</label>
+  </form>
+  <br>
+  <button>Am I right?</button>
+</div>
+<div class="endSlide">
+  <h2>You made it!!!</h2>
+  <p>You have completed our quiz</p>
+  <p>you got 5/7 correct!!</p>
+  <p>Click below to take this quiz again!!!</p>
+  <br>
+  <button>Take quiz again!!</button>
+</div>
+
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

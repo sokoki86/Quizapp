@@ -1,2 +1,1 @@
-# Quizapp
-This is the initial commit on our quiz app
+### Boilerplate app structure for Quiz App project

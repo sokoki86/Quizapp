@@ -1,0 +1,27 @@
+/* Your styles should be mobile-first and responsive */
+
+/** 
+  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
+  *
+  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
+  *
+*/
+.startquiz{
+  margin: 50px;
+  padding: 50px;
+  background-color: aqua;
+  border-radius: 30px;
+}
+
+.questions{
+  margin: 50px;
+  padding: 50px;
+  background-color: aqua;
+  border-radius: 30px;
+}
+.endSlide{
+  margin: 50px;
+  padding: 50px;
+  background-color: aqua;
+  border-radius: 30px;
+}
