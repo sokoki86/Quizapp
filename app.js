@@ -10,16 +10,16 @@ const store = [
       answer1: 'Coyote Ugly',
       answer2: 'The Doctor',
       answer3: 'Captain Kirk',
-      answer4: 'Soulja Boy'
-      correctAnswer:'The Doctor'
+      answer4: 'Soulja Boy',
+      correctAnswer:'The Doctor',
     },
      {
       question: 'What is the most used motivational phrase used for Barry Allen/The Flash, in the CW show "The Flash"?',
       answer1: 'Run, Barry, Run!',
       answer2: 'Run Forest Run',
       answer3: 'Run for president',
-      answer4: 'Run around on me'
-      correctAnswer: 'Run, Barry, Run'
+      answer4: 'Run around on me',
+      correctAnswer: 'Run, Barry, Run',
     },
   
   
@@ -42,8 +42,8 @@ const store = [
       answer1: 'Greys Anatomy',
       answer2:  'Supernatural',
       answer3:  'The Walking Dead',
-      answer4:  'Game of Thrones'
-      correctAnswer: 'Supernatual'
+      answer4:  'Game of Thrones',
+      correctAnswer: 'Supernatual',
     },
     
     { 
@@ -51,45 +51,43 @@ const store = [
       answer1:'The Lava/Fires of Mt. Doom, in Mordor',
       answer2:'the shire',
       answer3:'the deathstar',
-      answer4:'The reading rainbow'
-      correctAnswer: 'The Lava/Fires of Mt. Doom, in Mordor',
-    }
-      { 
+      answer4:'The reading rainbow',
+      correctAnswer: 'The Lava/Fires of Mt. Doom, in Mordor'
+    },
+    { 
         question: "What Planet is Princess Amadala from?",
         answer1: 'Uranus',
         answer2:'Tatouine',
         answer3:'Naboo',
         answer4:'Epsalon3',
-        correctAnswer: 'Naboo',
-      },
+        correctAnswer: 'Naboo'
+    },
       { 
         question: "In which movie is Jason Vorhees the main character?",
         answer1:'The Exorcist',
         answer2: 'Halloween',
         answer3: 'Nightmare on Elm Street',
-        answer4: 'Friday the 13th'
+        answer4: 'Friday the 13th',
         correctAnswer: 'Friday the 13th',
       },
       { 
         question: "Which of these is not a witch in Hocus Pocus?",
-        answer1:
-        answer2: 'Sarah Sanderson',
-          'Winifred Sanderson',
-          'Elizabeth Sanderson',
-          'Mary Sanderson'
-        ],
-        correctAnswer: 'Elizabeth Sanderson',
+        answer1: 'Sarah Sanderson',
+        answer2:  'Winifred Sanderson',
+        answer3:  'Elizabeth Sanderson',
+        answer4:  'Mary Sanderson',
+        correctAnswer: 'Elizabeth Sanderson'
       },
-      { question: "Who is the last Avatar to be born?",
-        answers: [
-          'Ang',
-          'Wan',
-          'Korra',
-          'Daniel'
-        ],
-        correctAnswer: 'Korra',
-      }
+      { 
+        question: "Who is the last Avatar to be born?",
+        answer1: 'Ang',
+        answer2: 'Wan',
+        answer3: 'Korra',
+        answer4: 'Daniel',
+        correctAnswer: 'Korra'
+      },
     ],
+    {
   quizStarted: false,
   questionNumber: 0,
   score: 0,
