@@ -3,93 +3,77 @@
  * Example store structure
  */
 //I added an id of tests to the questions
-const store = {
+const store = [
   // 5 or more questions are required
-  questions: {
-      question: 'What is the correct title/name for the main character in the show "Doctor Who"?',
-      answers: [
-        'Coyote Ugly',
-        'The Doctor',
-        'Captain Kirk',
-        'Soulja Boy'
-      ],
-      correctAnswer: 'The Doctor'
+   {
+      question:'What is the correct title/name for the main character in the show "Doctor Who"?',
+      answer1: 'Coyote Ugly',
+      answer2: 'The Doctor',
+      answer3: 'Captain Kirk',
+      answer4: 'Soulja Boy'
+      correctAnswer:'The Doctor'
     },
      {
       question: 'What is the most used motivational phrase used for Barry Allen/The Flash, in the CW show "The Flash"?',
-      answers: [
-        'Run, Barry, Run!',
-        'Run Forest Run',
-        'Run for president',
-        'Run around on me'
-      ],
+      answer1: 'Run, Barry, Run!',
+      answer2: 'Run Forest Run',
+      answer3: 'Run for president',
+      answer4: 'Run around on me'
       correctAnswer: 'Run, Barry, Run'
     },
   
   
     { question: 'What is a Boggart?',
-      answers: [
-        'A piece of equipment used in a quidditch match',
-        'A shape-shifting being that takes the form of your worst fear',
-        'A type of plant from Professor Sprouts class',
-        'What Hermione calls Malfoy '
-      ],
-      correctAnswer: 'A shape-shifting being that takes the form of your worst fear'
+      answer1:'A piece of equipment used in a quidditch match',
+      answer2: 'A shape-shifting being that takes the form of your worst fear',
+      answer3: 'A type of plant from Professor Sprouts class',
+      answer4: 'What Hermione calls Malfoy ',
+      correctAnswer: 'A shape-shifting being that takes the form of your worst fear',
     },
-  
-  
     { question: "Master Chief, mind telling me what you're doing on that ship?",
-      answers: [
-        'Sir, finishing this fight',
-        'Step Admiral Hood, what are you doing here?',
-        'Hey, Look over there',
-        'There is a snake in my boot'
-      ],
-      correctAnswer: 'Sir, finishing this fight'
+      answer1: 'Sir, finishing this fight',
+      answer2: 'Step Admiral Hood, what are you doing here?',
+      answer3: 'Hey, Look over there',
+      answer4: 'There is a snake in my boot',
+      correctAnswer: 'Sir, finishing this fight',
     },
 
     { question: 'Name the show this phrase belongs to "Driver picks the music, shotgun shuts his cakehole."',
-      answers: [
-        'Greys Anatomy',
-        'Supernatural',
-        'The Walking Dead',
-        'Game of Thrones'
-      ],
+      answer1: 'Greys Anatomy',
+      answer2:  'Supernatural',
+      answer3:  'The Walking Dead',
+      answer4:  'Game of Thrones'
       correctAnswer: 'Supernatual'
     },
     
-    { question: " Where is 'The One Ring' destroyed, in the climax event of the last movie/book in the Lord of the Rings series?",
-      answers: [
-        'The Lava/Fires of Mt. Doom, in Mordor',
-        'the shire',
-        'the deathstar',
-        'The reading rainbow'
-      ],
+    { 
+      question: " Where is 'The One Ring' destroyed, in the climax event of the last movie/book in the Lord of the Rings series?",
+      answer1:'The Lava/Fires of Mt. Doom, in Mordor',
+      answer2:'the shire',
+      answer3:'the deathstar',
+      answer4:'The reading rainbow'
       correctAnswer: 'The Lava/Fires of Mt. Doom, in Mordor',
     }
-  ]
-    [
-      { question: "What Planet is Princess Amadala from?",
-        answers: [
-          'Uranus',
-          'Tatouine',
-          'Naboo',
-          'Epsalon3'
-        ],
+      { 
+        question: "What Planet is Princess Amadala from?",
+        answer1: 'Uranus',
+        answer2:'Tatouine',
+        answer3:'Naboo',
+        answer4:'Epsalon3',
         correctAnswer: 'Naboo',
       },
-      { question: "In which movie is Jason Vorhees the main character?",
-        answers: [
-          'The Exorcist',
-          'Halloween',
-          'Nightmare on Elm Street',
-          'Friday the 13th'
-        ],
+      { 
+        question: "In which movie is Jason Vorhees the main character?",
+        answer1:'The Exorcist',
+        answer2: 'Halloween',
+        answer3: 'Nightmare on Elm Street',
+        answer4: 'Friday the 13th'
         correctAnswer: 'Friday the 13th',
       },
-      { question: "Which of these is not a witch in Hocus Pocus?",
-        answers: [
-          'Sarah Sanderson',
+      { 
+        question: "Which of these is not a witch in Hocus Pocus?",
+        answer1:
+        answer2: 'Sarah Sanderson',
           'Winifred Sanderson',
           'Elizabeth Sanderson',
           'Mary Sanderson'
@@ -133,12 +117,12 @@ const store = {
 
 // this is where the start page template should go
 function startPage(){ 
-return
+  let StartPage =
 `<div class="startquiz">
   <img src="images/movie-clapper.png" alt="Movie-clapper">
   <h2>Movie & Trivia Quiz</h2>
   <p>They all float down here!!!!</p>
-  <button id="beginQuiz">Let's Play</button>
+  <button class="beginQuiz">Let's Play</button>
 </div>`}
 
 function questionPage(){
@@ -163,14 +147,14 @@ function questionPage(){
   function correctAnswer(){
     let correctAnswer = `<div calss= "correct">
     <h2>You got it right</h2>
-    <button class='btn start-button>Next Question</button>
+    <button class='trans-button'>Next Question</button>
     </div>;`
   }
 
   function incorrectAnswer(){
     let incorrectAnswer = `<div calss= "incorrect">
     <h2>Oops...You got it wrong</h2>
-    <button class='btn start-button</button>
+    <button class='trans-button>Next Question</button>
     </div>;`
   }
   }
@@ -183,11 +167,11 @@ function results() {
   <p>you got ${store.score}/10 correct!!</p>
   <p>Click below to take this quiz again!!!</p>
   <br>
-  <button>Take quiz again!!</button>
+  <button class="restart-quiz-btn">Take quiz again!!</button>
 </div>`
 }
   
- //REnder functions
+ //Render functions
 
  function renderStart(){
    const startHtml = startQuiz();
@@ -213,6 +197,12 @@ function renderResults() {
   $('.main').html(html);
 
 }
+
+//event functions
+
+
+
+
 
 
 
