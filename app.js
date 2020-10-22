@@ -20,6 +20,7 @@ const store = {
         'Run around on me',
         'Run for President'
       ],
+      correctAnswer: 'Run, Barry, Run!',
     },
     {
       question: 'What is a Boggart?',
