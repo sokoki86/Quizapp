@@ -88,6 +88,7 @@ const store = [
       },
     ],
     {
+      
   quizStarted: false,
   questionNumber: 0,
   score: 0,
