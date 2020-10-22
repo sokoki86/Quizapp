@@ -1,114 +1,73 @@
 /* eslint-disable strict */
-/**
- * Example store structure
- */
-//I added an id of tests to the questions
-const store = [
+const store = {
   // 5 or more questions are required
+  questions: [
     {
       question: 'What is the correct title/name for the main character in the show "Doctor Who"?',
-      answer1: 'Coyote Ugly',
-      answer2: 'The Doctor',
-      answer3: 'Captain Kirk',
-      answer4: 'Soulja Boy',
+      answers: [
+        'Coyote Ugly',
+        'The Doctor',
+        'Captain Kirk',
+        'Soulja Boy',
+      ],
       correctAnswer: 'The Doctor',
     },
     {
       question: 'What is the most used motivational phrase used for Barry Allen/The Flash, in the CW show "The Flash"?',
-      answer1: 'Run, Barry, Run!',
-      answer2: 'Run Forest Run',
-      answer3: 'Run for president',
-      answer4: 'Run around on me',
-      correctAnswer: 'Run, Barry, Run',
+      answers: [
+        'Run, Barry, Run!',
+        'Run Forest Run',
+        'Run around on me',
+        'Run for President'
+      ],
     },
-
-
     {
       question: 'What is a Boggart?',
-      answer1: 'A piece of equipment used in a quidditch match',
-      answer2: 'A shape-shifting being that takes the form of your worst fear',
-      answer3: 'A type of plant from Professor Sprouts class',
-      answer4: 'What Hermione calls Malfoy ',
-      correctAnswer: 'A shape-shifting being that takes the form of your worst fear',
+      answers: [
+        'A piece of equipment used in a quidditch match',
+        'A shape-shifting being that takes the form of your worst fear',
+        'A type of plant from Professor Sprouts class',
+        'What Hermione calls Malfoy ',
+      ],
+      correctAnswer: 'A shape-shifting being that takes the form of your worst fear'
     },
-    // eslint-disable-next-line quotes
     {
       question: 'Master Chief, mind telling me what you\'re doing on that ship?',
-      answer1: 'Sir, finishing this fight',
-      answer2: 'Step Admiral Hood, what are you doing here?',
-      answer3: 'Hey, Look over there',
-      answer4: 'There is a snake in my boot',
-      correctAnswer: 'Sir, finishing this fight',
+      answers: [
+        'Sir, finishing this fight',
+        'Step Admiral Hood, what are you doing here?',
+        'Hey, Look over there',
+        'There is a snake in my boot',
+      ],
+      correctAnswer: 'Sir, finishing this fight'
     },
-
     {
       question: 'Name the show this phrase belongs to "Driver picks the music, shotgun shuts his cakehole."',
-      answer1: 'Greys Anatomy',
-      answer2: 'Supernatural',
-      answer3: 'The Walking Dead',
-      answer4: 'Game of Thrones',
-      correctAnswer: 'Supernatual',
-    },
-
-    {
-    // eslint-disable-next-line quotes
-      question: " Where is 'The One Ring' destroyed, in the climax event of the last movie/book in the Lord of the Rings series?",
-      answer1: 'The Lava/Fires of Mt. Doom, in Mordor',
-      answer2: 'the shire',
-      answer3: 'the deathstar',
-      answer4: 'The reading rainbow',
-      correctAnswer: 'The Lava/Fires of Mt. Doom, in Mordor'
+      answers: [
+        'Greys Anatomy',
+        'Supernatural',
+        'The Walking Dead',
+        'Game of Thrones',
+      ],
+      correctAnswer: 'Supernatural'
     },
     {
-    // eslint-disable-next-line quotes
-      question: "What Planet is Princess Amadala from?",
-      answer1: 'Uranus',
-      answer2: 'Tatouine',
-      answer3: 'Naboo',
-      answer4: 'Epsalon3',
+      question: 'What Planet is Princess Amadala from?',
+      answers: [
+        'Uranus',
+        'Tatouine',
+        'Naboo',
+        'Epsalon3',
+      ],
       correctAnswer: 'Naboo'
-    },
-    {
-<<<<<<< HEAD
-      
+    }
+    
+  ],
   quizStarted: false,
   questionNumber: 0,
   score: 0,
-  wrong: 0,
+  message: ''
 };
-=======
-      question: 'In which movie is Jason Vorhees the main character?',
-      answer1: 'The Exorcist',
-      answer2: 'Halloween',
-      answer3: 'Nightmare on Elm Street',
-      answer4: 'Friday the 13th',
-      correctAnswer: 'Friday the 13th',
-    },
-    {
-      question: 'Which of these is not a witch in Hocus Pocus?',
-      answer1: 'Sarah Sanderson',
-      answer2: 'Winifred Sanderson',
-      answer3: 'Elizabeth Sanderson',
-      answer4: 'Mary Sanderson',
-      correctAnswer: 'Elizabeth Sanderson'
-    },
-    {
-      question: 'Who is the last Avatar to be born?',
-      answer1: 'Ang',
-      answer2: 'Wan',
-      answer3: 'Korra',
-      answer4: 'Daniel',
-      correctAnswer: 'Korra'
-    },
-  ],
-
-  scoreStore = {
-    quizStarted: false,
-    questionNumber: 0,
-    score: 0,
-    wrong: 0,
-  };
->>>>>>> 37eef9ceea2b5f959b149563e36bb6b32859c8c4
 
 /**
  * 
@@ -125,136 +84,162 @@ const store = [
  * 
  */
 
-/********** TEMPLATE GENERATION FUNCTIONS **********/
+
 //I am creating the render function here
 
 
-// this is where the start page template should go
+
+
+
+
+//Makes sure they can't skip question and delivers feedback slide/cards
+function scoreQuestion() {
+  let answer = getAnswer();
+  if(answer === undefined || answer === null) {
+    store.message = 'You got this, just pick one!';
+    render();
+    return;
+  }
+  if(answer === getCorrect()) {
+    store.message = 'Yay!! You did it!! '+ answer + ' is right!';
+    store.score += 1;
+  } else {
+    store.message = 'Oops..! ' + getCorrect() + ' was right!';
+  }
+  store.questionNumber += 1;
+}
+
+
+//Templates section
+
+//displays start Page
 function startPage() {
-  let StartPage =
-    `<div class="startquiz">
-  <img src="images/movie-clapper.png" alt="Movie-clapper">
-  <h2>Movie & Trivia Quiz</h2>
-  <p>They all float down here!!!!</p>
-  <button class="beginQuiz">Let's Play</button>
-</div>`;
-  return StartPage;
+  return `<div class="card">
+  <h2>Entertainment Tonight Presents</h2>
+  <p>The Entertainment Quiz</p>
+  <button id="start">Let's Play!!</button>`;
 }
 
-// this is the question template
-function questionPage(store) {
-  let questionPage =
-    `<div class="questions">
-    <h2 id="question">${store.question}</h2>
-    <form class="boxed">
-    <input type="radio" id="ans1" name="quest" value="${store.answer1}">
-    <label for="answer1">${store.answer1}</label><br>
-    <input type="radio" id="ans2" name="quest" value="${store.answer2}">
-    <label for="answer2">${store.answer2}</label><br>
-    <input type="radio" id="ans3" name="quest" value="${store.answer3}">
-    <label for="answer3">${store.answer3}</label><br>
-    <input type="radio" id="ans4" name="quest" value="${store.answer4}">
-    <label for="answer4">${store.answer4}</label>
-    <br><br>
-    <button id="submit">Submit Answer</button>
-    </form> 
-    </div>`;
-  return questionPage;
-}
-// correct answer box
-function correctAnswer() {
-  let rightAnswer = `<div calss= "correct">
-    <h2>You got it right</h2>
-    <button class='trans-button'>Next Question</button>
-    </div>`;
-  return rightAnswer;
+//displays end Page
+function endPage() {
+  return `<div class="card">
+  <h2>Congratulations!</h2>
+  <p>You Did It!! You scored ${store.score} points out of ${store.questions.length}</p>
+  <strong>Your score: ${getScore()}%</strong>
+  <button id="restart">Play again?</button>`;
 }
 
-function incorrectAnswer() {
-  let IncorrectAnswer = `<div calss= "incorrect">
-    <h2>Oops...You got it wrong</h2>
-    <button class='trans-button'>Next Question</button>
-    </div>`;
-  return IncorrectAnswer;
+//allows us to generate score
+function getScore() {
+  return ((store.score/store.questions.length) * 100).toFixed(2);
 }
 
 
-
-function results() {
-  let endOfQuiz = `<div class="endSlide">
-  <h2>You made it!!!</h2>
-  <p>You have completed our quiz</p>
-  <p>you got ${scoreStore.score}/10 correct!!</p>
-  <p>Click below to take this quiz again!!!</p>
-  <br>
-  <button class="restart-quiz-btn">Take quiz again!!</button>
-</div>`;
-  return endOfQuiz;
+// gets score
+function currentScore() {
+  return `<strong>Question ${store.questionNumber} of ${store.questions.length} - ${getScore()}%`;
 }
 
-//Render functions
-
-function renderStart() {
-  const startHtml = startPage();
-  $('.main').html(startHtml);
-  $('.beginQuiz').on('click', function(){
-    renderQuestion();
-  })
+// message card
+function templateMessage() {
+  return `<div class="card">
+  ${currentScore()}
+  <h2>${store.message}</h2>
+  <button id="close">Close</button>`;
 }
 
-
-function renderQuestion() {
-  const question = store[scoreStore.questionNumber];
-  const html = questionPage(question);
-  $('.main').html(html);
-  $('.main').submit('#submit', (event) => {
-    event.preventDefault();
-    if ($('input[name="quest"]:checked').val() === question.correctAnswer){
-      scoreStore.score++;
-      renderCorrect();  
-    }else {
-      renderIncorrect();
-    }
-  });
-}
-  
-
-function renderCorrect() {
-  const html = correctAnswer();
-  $('.main').html(html);
-  $('.main').on('click', '.trans-button', () => {
-		if (store.question >= 9) {
-			renderResults();
-		} else {
-			renderQuestion(store.question++);
-		}
-	});
+//grabs answer based off whether it was selected
+function getAnswer() {
+  return $('input[name=question' + store.questionNumber + ']:checked').val();
 }
 
-function renderIncorrect() {
-  let html = incorrectAnswer();
-  $('.main').html(html);
-  $('.main').on('click', '.trans-button', () => {
-		if (store.question >= 9) {
-			renderResults();
-		} else {
-			store.question++;
-			renderQuestion(store.question++);
-		}
-	});
+//grabs the correct answer
+function getCorrect() {
+  return store.questions[store.questionNumber].correctAnswer;
+} 
+// answer comment
+function templateAnswer(answer) {
+  return `<div class="form-group">
+  <input type="radio" name="question${store.questionNumber}" value="${answer}">
+  <label for="question${store.questionNumber}">${answer}</label>
+  </div>`;
 }
-function renderResults() {
-  let html = results();
-  $('.main').html(html);
 
+//grabs the question based on the question number
+function getQuestion() {
+  return store.questions[store.questionNumber].question;
+}
+//generates template for question function
+function Question() {
+  let template = `<div class="card">
+  ${currentScore()}
+  <h2>${getQuestion()}</h2>
+  <form id="questionform">`;
+  for(let i = 0; i < store.questions[store.questionNumber].answers.length; i++) {
+    let answer = store.questions[store.questionNumber].answers[i];
+    template += templateAnswer(answer);
+  }
+  template += '<button id="answer">Submit Answer</button></form>';
+  return template;
+}
+function beginQuiz(){
+  store.quizStarted = true;
+  store.questionNumber = 0;
+  store.score = 0;
+}
+
+function restart(){
+  store.quizStarted = false;
+  store.questionNumber = 0;
+  store.score = 0;
 }
 
 
 
-//event functions
+// replaces the main tag
+function render() {
+  if(store.message !== '') {
+    console.log('Showing message', store.message);
+    $('main').html(templateMessage());
+  } else if(!store.quizStarted) {
+    $('main').html(startPage());
+  } else if (store.questionNumber === store.questions.length) { 
+    $('main').html(endPage());
+  } else {
+    $('main').html(Question());
+  }
+}
 
+//starts the quiz
+function handleBeginQuiz(event) {
+  beginQuiz();
+  render();
+}
 
+//restarts quiz from endPage
+function handleRestart(event) {
+  restart();
+  render();
+}
 
+//Gets Answer for question
+function handleAnswerQuestion(event) {
+  event.preventDefault();
+  scoreQuestion();
+  render();
+}
 
+// allows for user to click out of answer screen
+function handleCloseMessage(event) {
+  store.message = '';
+  render();
+}
 
-renderStart();
+//Calls all event listeners
+$(() => {
+  render();
+  $('main').on('click', '#start', handleBeginQuiz);
+  $('main').on('click', '#restart', handleRestart);
+  $('main').on('click', '#answer', handleAnswerQuestion);
+  $('main').on('click', '#close', handleCloseMessage);
+});      

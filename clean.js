@@ -3,9 +3,9 @@
  * Example store structure
  */
 //I added an id of tests to the questions
-const store = {
+//const store = {
     // 5 or more questions are required
-    questions: [
+    /*questions: [
       {id: 'tests',
         question: 'What is the correct title/name for the main character in the show "Doctor Who"?',
         answers: [
@@ -168,7 +168,7 @@ function handleSubmit(){
         }
 
     });
-}
+}*/
 
 
 

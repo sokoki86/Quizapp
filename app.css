@@ -6,36 +6,83 @@
   * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
   *
 */
-.startquiz{
-  margin: 50px;
-  padding: 50px;
-  background-color:yellow;
-  border-radius: 30px;
-}
-
-.questions{
-  margin: 50px;
-  padding: 50px;
-  background-color:chartreuse;
-  border-radius: 30px;
-}
-.endSlide{
-  margin: 50px;
-  padding: 50px;
-  background-color: aqua;
-  border-radius: 30px;
-}
-
-body{
+.body {
+  display: flex;
+  flex-direction: column;
+  margin:0;
   justify-content: center;
-  text-align: center;
-  font-size: 25px;
-  font-family: comic sans ms;
-}
-
-div.img{
-  content: url(images/movie-clapper.png);
-  position: flex;
+  justify-items: center;
+  align-content: center;
+  font-family: Helvetica, arial, sans-serif;
+  background-size: cover;
   
 }
+
+/* class for everything in header */
+
+.header{
+text-align: center;
+margin:auto;
+background-color: black;
+color: white;
+padding: 20px;
+padding-left: auto;
+padding-right: auto;
+}
+
+
+/* class for everything in main */
+
+.main{
+  margin: auto;
+  padding: 5px;
+
+}
+
+/* class for everything on cards */
+
+.card{
+  border-width: 10px;
+  border-color: black;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+  background-color: cyan;
+  color: black;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+/*this is the parent class for the radio buttons and labels*/
+
+#questionForm{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*class to style radio button labels*/
+
+form input[type="radio"] + label{
+  padding:5px;
+  color:black;
+}
+
+/* class to style buttons */
+
+button {
+  color:white;
+  background-color: black;
+}
+
+/* for mobile first approach */
+
+@media all and (min-width:800px) {
+
+  .header {
+    border-radius: 30px;
+  }
+
+} 
 
